@@ -14,8 +14,15 @@ class MyApp extends StatelessWidget {
       initialRoute: 'login',
       routes: {
         'login': (context) => LoginScreen(),
-        'home':(context) => HomeScreen()
+        'home':(context) => HomeScreen(),
+        'dataLoan':(context) => DataLoan()
       },
+      theme: ThemeData.light().copyWith(
+        appBarTheme: AppBarTheme(
+          color: Color.fromARGB(255, 116, 25, 18)
+        ),
+        
+      ),
     );
   }
 }

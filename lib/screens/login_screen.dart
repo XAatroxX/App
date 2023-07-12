@@ -47,7 +47,7 @@ class LoginScreen extends StatelessWidget {
       
                     MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, 'home');
+                        Navigator.pushReplacementNamed(context, 'home');
                       },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)
