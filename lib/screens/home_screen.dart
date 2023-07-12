@@ -1,5 +1,9 @@
+import 'package:aatrox_app/screens/screens.dart';
 import 'package:aatrox_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../provider/navigation_bar_current.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,18 +14,32 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Aatrox', style: TextStyle(fontWeight: FontWeight.bold),),
       ),
-      body: ListViewBuilder(),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color.fromARGB(255, 116, 25, 18),
-        selectedItemColor: Colors.white,
-
-       items: [
-        BottomNavigationBarItem(icon: Icon(Icons.payments_outlined), label: 'Prestamos'),
-        BottomNavigationBarItem(icon: Icon(Icons.people), label: 'Clientes'),
-        BottomNavigationBarItem(icon: Icon(Icons.money_off_csred_rounded), label: 'Gastos'),
-       ], 
-      )
+      body: _HomeScreenBody(),
+      bottomNavigationBar: CustomButtonNavitaionBar() 
     );
+  }
+}
+
+class _HomeScreenBody extends StatelessWidget {
+  const _HomeScreenBody({super.key});
+  
+  @override
+  Widget build(BuildContext context) {
+
+    final provider = Provider.of<NavigationBarCurrent>(context);
+    final currentIndex =provider.currentIndex;
+
+    switch( currentIndex ){
+      case 0:
+        return ListViewBuilder();
+      
+      case 1:
+        return ClientsScreen();
+
+        
+      default:
+        return ListViewBuilder();
+    }
   }
 }
 

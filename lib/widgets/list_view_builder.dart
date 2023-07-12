@@ -13,14 +13,27 @@ class ListViewBuilder extends StatelessWidget {
             onTap: () => Navigator.pushNamed(context, 'dataLoan'),
             leading: Text('${index+1}', style: TextStyle(fontSize: 40),),
             title: Container(
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   
                   Text('Name', style: TextStyle(fontWeight: FontWeight.bold)),
                   Text('Address'),
                   Text('PhoneNumber'),
-                  Text('Lunes a Viernes', style: TextStyle(color: const Color.fromARGB(255, 116, 25, 18),),),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Lunes a Viernes', style: TextStyle(color: Color.fromARGB(255, 116, 25, 18),),),
+                      Row(
+                        children: [
+                          Icon(Icons.coronavirus_rounded),
+                          Text('Codigo', style: TextStyle(color: Color.fromARGB(255, 116, 25, 18),),),
+                        ],
+                      )
+                      
+                    ],
+                  ),
+                  
                   Divider()
                 ],
               ),
