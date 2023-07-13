@@ -19,11 +19,11 @@ class MyApp extends StatelessWidget {
         title: 'Material App',
         initialRoute: 'login',
         routes: {
-          'login': (context) => LoginScreen(),
-          'home':(context) => HomeScreen(),
-          'dataLoan':(context) => DataLoan(),
-          'addClient':(context) => AddClientScreen(),
-          'addLoan':(context) => AddLoanScreen()
+          'login': (context) => const LoginScreen(),
+          'home':(context) => const HomeScreen(),
+          'dataLoan':(context) => const DataLoan(),
+          'addClient':(context) => const AddClientScreen(),
+          'addLoan':(context) => const AddLoanScreen()
         },
         theme: ThemeData.light().copyWith(
           appBarTheme: const AppBarTheme(

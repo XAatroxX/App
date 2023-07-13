@@ -7,7 +7,7 @@ class DataLoan extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Datos prestamo'),
+        title: const Text('Datos prestamo'),
       ),
     );
   }

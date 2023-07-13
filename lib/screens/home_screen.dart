@@ -1,6 +1,4 @@
-import 'package:aatrox_app/screens/screens.dart';
 import 'package:aatrox_app/widgets/widgets.dart';
-import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../provider/navigation_bar_current.dart';
@@ -12,8 +10,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSizeWidgets.newMethod(context),
-      body: _HomeScreenBody(),
-      bottomNavigationBar: CustomButtonNavitaionBar() 
+      body: const _HomeScreenBody(),
+      bottomNavigationBar: const CustomButtonNavitaionBar() 
     );
   }
 }
@@ -29,16 +27,13 @@ class _HomeScreenBody extends StatelessWidget {
 
     switch( currentIndex ){
       case 0:
-        return ListViewBuilderLoans();
-      
+        return const ListViewBuilderLoans();
+
       case 1:
-        return ListViewBuilderClients();
-
-
-
-        
+        return const ListViewBuilderClients();
+      
       default:
-        return ListViewBuilderLoans();
+        return const ListViewBuilderLoans();
     }
   }
 }
