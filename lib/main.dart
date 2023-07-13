@@ -21,7 +21,9 @@ class MyApp extends StatelessWidget {
         routes: {
           'login': (context) => LoginScreen(),
           'home':(context) => HomeScreen(),
-          'dataLoan':(context) => DataLoan()
+          'dataLoan':(context) => DataLoan(),
+          'addClient':(context) => AddClientScreen(),
+          'addLoan':(context) => AddLoanScreen()
         },
         theme: ThemeData.light().copyWith(
           appBarTheme: const AppBarTheme(

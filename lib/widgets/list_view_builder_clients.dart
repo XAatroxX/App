@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ListViewBuilder extends StatelessWidget {
-  const ListViewBuilder({super.key});
+class ListViewBuilderClients extends StatelessWidget {
+  const ListViewBuilderClients({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,20 +20,6 @@ class ListViewBuilder extends StatelessWidget {
                   Text('Name', style: TextStyle(fontWeight: FontWeight.bold)),
                   Text('Address'),
                   Text('PhoneNumber'),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Lunes a Viernes', style: TextStyle(color: Color.fromARGB(255, 116, 25, 18),),),
-                      Row(
-                        children: [
-                          Icon(Icons.coronavirus_rounded),
-                          Text('Codigo', style: TextStyle(color: Color.fromARGB(255, 116, 25, 18),),),
-                        ],
-                      )
-                      
-                    ],
-                  ),
-                  
                   Divider()
                 ],
               ),

@@ -11,9 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Aatrox', style: TextStyle(fontWeight: FontWeight.bold),),
-      ),
+      appBar: PreferredSizeWidgets.newMethod(context),
       body: _HomeScreenBody(),
       bottomNavigationBar: CustomButtonNavitaionBar() 
     );
@@ -31,15 +29,43 @@ class _HomeScreenBody extends StatelessWidget {
 
     switch( currentIndex ){
       case 0:
-        return ListViewBuilder();
+        return ListViewBuilderLoans();
       
       case 1:
-        return ClientsScreen();
+        return ListViewBuilderClients();
+
+
 
         
       default:
-        return ListViewBuilder();
+        return ListViewBuilderLoans();
     }
   }
 }
 
+class PreferredSizeWidgets {
+  
+
+  
+
+
+  static AppBar newMethod(BuildContext context) {
+
+    final provider = Provider.of<NavigationBarCurrent>(context);
+    final currentIndex =provider.currentIndex;
+
+
+    switch(currentIndex){
+      case 0:
+        return AppBarCustom.loan(context);
+      
+      case 1:
+        return AppBarCustom.client(context);
+
+      default:
+        return AppBarCustom.loan(context);
+
+    }
+
+  }
+}
